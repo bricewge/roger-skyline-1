@@ -1,0 +1,16 @@
+#+TITLE: roger-skyline-1
+
+* plan
+** DONE create an OVA image with nixpkgs
+CLOSED: [2019-05-21 mar. 15:18]
+- https://www.johbo.com/2017/building-a-nixos-image-for-virtualbox.html
+- https://gist.github.com/andir/d208f54de7562ab8ceaacdd3a28363d4
+** TODO override filesystem creation of ~system.build.virtualBoxOVA~
+- https://github.com/NixOS/nixpkgs/issues/55366
+** CANCELLED use a NAT network
+CLOSED: [2019-05-22 mer. 10:27]
+:LOGBOOK:
+- State "CANCELLED"  from "TODO"       [2019-05-22 mer. 10:27] \\
+  Using bridged networking at the end
+:END:
+- https://www.thomas-krenn.com/en/wiki/Network_Configuration_in_VirtualBox#Network_Address_Translation_.28NAT.29
