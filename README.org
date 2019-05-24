@@ -14,3 +14,7 @@ CLOSED: [2019-05-22 mer. 10:27]
   Using bridged networking at the end
 :END:
 - https://www.thomas-krenn.com/en/wiki/Network_Configuration_in_VirtualBox#Network_Address_Translation_.28NAT.29
+** TODO Defend against port scanning
+** TODO Defend against DDOS
+** DONE Add self signed certificat to web server
+CLOSED: [2019-05-24 ven. 14:48]

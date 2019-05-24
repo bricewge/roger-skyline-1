@@ -73,9 +73,20 @@
   };
 
   # ** web server
-  services.httpd.enable = true;
-  services.httpd.adminAddr = "alice@example.org";
-  services.httpd.documentRoot = "${pkgs.valgrind.doc}/share/doc/valgrind/html";
+  services.nginx = {
+    enable = true;
+    virtualHosts = {
+      localhost = {
+        forceSSL = true;
+        enableACME = true;
+        root = "${pkgs.valgrind.doc}/share/doc/valgrind/html";
+      };
+    };
+  };
+  # Solely use self-signed certificates
+  systemd.timers.acme-localhost.enable = lib.mkForce false;
+  systemd.services.acme-localhost.enable = lib.mkForce false;
+  systemd.services.nginx.unitConfig.Wants = lib.mkForce "acme-selfsigned-certificates.target";
 
   # ** auto upgrade
   system.autoUpgrade = {
